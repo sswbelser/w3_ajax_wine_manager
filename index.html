@@ -20,42 +20,44 @@
 
 	<div id="wine-container"></div>
 
-	<!--One Wine-->
-	<div class="row margin-top-20 wine-container">
-		<div class="col-sm-3">
-			<img src="http://s3-us-west-2.amazonaws.com/sandboxapi/saint_cosme.jpg" class="img-responsive" />
+	<script type="text/template" id="wine-template">
+		<!--One Wine-->
+		<div class="row margin-top-20 wine-container">
+			<div class="col-sm-3">
+				<img src="<%= picture %>" class="img-responsive" />
+			</div>
+			<div class="col-sm-9">
+				<div class="margin-top-20">
+					<span class="bold">Name: </span><span><%= name %></span>
+				</div>
+				<div>
+					<span class="bold">Year: </span><span><%= year %></span>
+				</div>
+				<div>
+					<span class="bold">Grapes: </span><span><%= grapes %></span>
+				</div>
+				<div>
+					<span class="bold">Country: </span><span><%= country %></span>
+				</div>
+				<div>
+					<span class="bold">Region: </span><span><%= region %></span>
+				</div>
+				<div>
+					<span class="bold">Price: </span><span><%= price %></span>
+				</div>
+				<div>
+					<span class="bold">Description: </span>
+				</div>
+				<div class="margin-top-10">
+					<%= description %>
+				</div>
+				<div class="margin-top-20">
+					<a data-id="<%= id %>" href="#" class="btn btn-default edit-wine-button">Edit Wine</a>
+				</div>
+			</div>
 		</div>
-		<div class="col-sm-9">
-			<div class="margin-top-20">
-				<span class="bold">Name: </span><span>CHATEAU DE SAINT COSME</span>
-			</div>
-			<div>
-				<span class="bold">Year: </span><span>2009</span>
-			</div>
-			<div>
-				<span class="bold">Grapes: </span><span>Grenache / Syrah</span>
-			</div>
-			<div>
-				<span class="bold">Country: </span><span>France</span>
-			</div>
-			<div>
-				<span class="bold">Region: </span><span>Southern Rhone</span>
-			</div>
-			<div>
-				<span class="bold">Price: </span><span>13</span>
-			</div>
-			<div>
-				<span class="bold">Description: </span>
-			</div>
-			<div class="margin-top-10">
-				The aromas of fruit and spice give one a hint of the light drinkability of this lovely wine, which makes an excellent complement to fish dishes.
-			</div>
-			<div class="margin-top-20">
-				<a data-id="<%= id %>" href="#" class="btn btn-default edit-wine-button">Edit Wine</a>
-			</div>
-		</div>
-	</div>
-	<!--/One Wine-->
+		<!--/One Wine-->
+	</script>
 </div>
 
 <!--Add Wine Modal-->
@@ -185,7 +187,7 @@
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				<button id="submit-wine" type="button" class="btn btn-success">Save Edits</button>
+				<button id="save-wine" type="button" class="btn btn-success">Save Edits</button>
 				<button id="delete-wine" type="button" class="btn btn-danger">Delete Wine</button>
 			</div>
 		</div><!-- /.modal-content -->
